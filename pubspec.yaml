@@ -1,8 +1,8 @@
 name: advertising_id
-description: A new Flutter plugin.
+description: A Flutter plugin to access advertising ID.
 version: 0.9.0
 author: Shinobu Okano <okanoshinobu8@gmail.com>
-homepage:
+homepage: https://github.com/operando/advertising_id
 
 flutter:
   plugin:
@@ -14,5 +14,5 @@ dependencies:
     sdk: flutter
 
 environment:
-  sdk: ">=1.21.0"
+  sdk: ">=1.21.0 <3.0.0"
   flutter: ">=0.1.4"
