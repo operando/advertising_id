@@ -1,10 +1,5 @@
 # advertising_id
 
-A new Flutter plugin.
+A Flutter plugin to access advertising ID.
 
-## Getting Started
-
-For help getting started with Flutter, view our online
-[documentation](https://flutter.io/).
-
-For help on editing plugin code, view the [documentation](https://flutter.io/platform-plugins/#edit-code).
+Wraps [ASIdentifierManager.advertisingIdentifier](https://developer.apple.com/documentation/adsupport/asidentifiermanager/1614151-advertisingidentifier) (on iOS) and [advertising ID](https://developers.google.com/android/reference/com/google/android/gms/ads/identifier/AdvertisingIdClient) (on Android).
