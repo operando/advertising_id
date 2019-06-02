@@ -1,4 +1,4 @@
-[![pub package](https://img.shields.io/pub/v/flutter_blue.svg)](https://pub.dartlang.org/packages/advertising_id)
+[![pub package](https://img.shields.io/pub/v/advertising_id.svg)](https://pub.dartlang.org/packages/advertising_id)
 
 # advertising_id
 
