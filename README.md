@@ -1,3 +1,5 @@
+[![pub package](https://img.shields.io/pub/v/flutter_blue.svg)](https://pub.dartlang.org/packages/advertising_id)
+
 # advertising_id
 
 A Flutter plugin to access advertising ID.
