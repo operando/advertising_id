@@ -22,9 +22,14 @@ class AdvertisingIdPlugin(private val registrar: Registrar) : MethodCallHandler 
         when (call.method) {
             "getAdvertisingId" -> thread {
                 try {
-                    result.success(AdvertisingIdClient.getAdvertisingIdInfo(registrar.context()).id)
+                    val id = AdvertisingIdClient.getAdvertisingIdInfo(registrar.context()).id
+                    registrar.activity().runOnUiThread {
+                        result.success(id)
+                    }
                 } catch (e: Exception) {
-                    result.success("")
+                    registrar.activity().runOnUiThread {
+                        result.error(e.javaClass.canonicalName, e.localizedMessage, null)
+                    }
                 }
             }
             else -> result.notImplemented()
