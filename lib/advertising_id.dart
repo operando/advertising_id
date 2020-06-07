@@ -10,4 +10,8 @@ class AdvertisingId {
     final String id = await _channel.invokeMethod('getAdvertisingId');
     return id;
   }
+
+  static Future<bool> get isLimitAdTrackingEnabled async {
+    return await _channel.invokeMethod('isLimitAdTrackingEnabled');
+  }
 }

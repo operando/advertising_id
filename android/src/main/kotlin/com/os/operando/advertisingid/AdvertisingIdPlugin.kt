@@ -32,6 +32,18 @@ class AdvertisingIdPlugin(private val registrar: Registrar) : MethodCallHandler 
                     }
                 }
             }
+            "isLimitAdTrackingEnabled" -> thread {
+                try {
+                    val isLimitAdTrackingEnabled = AdvertisingIdClient.getAdvertisingIdInfo(registrar.context()).isLimitAdTrackingEnabled
+                    registrar.activity().runOnUiThread {
+                        result.success(isLimitAdTrackingEnabled)
+                    }
+                } catch (e: Exception) {
+                    registrar.activity().runOnUiThread {
+                        result.error(e.javaClass.canonicalName, e.localizedMessage, null)
+                    }
+                }
+            }
             else -> result.notImplemented()
         }
     }
