@@ -1,3 +1,8 @@
+## [1.0.0] 2020-06-07
+
+* Update versions
+* Add isLimitAdTrackingEnabled variable
+
 ## [0.9.2] 2019-07-11
 
 * Fix

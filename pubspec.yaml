@@ -1,8 +1,9 @@
 name: advertising_id
-description: A Flutter plugin to access advertising ID.
-version: 0.9.2
+description: A Flutter plugin to access advertising ID.Wraps ASIdentifierManager.advertisingIdentifier (on iOS) and advertising ID (on Android).
+version: 0.9.3
 author: Shinobu Okano <okanoshinobu8@gmail.com>
 homepage: https://github.com/operando/advertising_id
+repository: https://github.com/operando/advertising_id
 
 flutter:
   plugin:
