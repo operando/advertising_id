@@ -1,6 +1,7 @@
 import Flutter
 import UIKit
 import AdSupport
+import AppTrackingTransparency
 
 public class SwiftAdvertisingIdPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
@@ -12,14 +13,28 @@ public class SwiftAdvertisingIdPlugin: NSObject, FlutterPlugin {
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
         case "getAdvertisingId":
-            var idfaString: String!
             let manager = ASIdentifierManager.shared()
-            if manager.isAdvertisingTrackingEnabled {
-                idfaString = manager.advertisingIdentifier.uuidString
+            if #available(iOS 14.0, *) {
+                ATTrackingManager.requestTrackingAuthorization { status in
+                    var idfaString = ""
+                    switch status {
+                        case .authorized:
+                            idfaString = manager.advertisingIdentifier.uuidString
+                            break
+                        @unknown default:
+                            break
+                    }
+                    result(idfaString) 
+                }
             } else {
-                idfaString = ""
-            }
-            result(idfaString)
+                var idfaString: String!
+                if manager.isAdvertisingTrackingEnabled {
+                    idfaString = manager.advertisingIdentifier.uuidString
+                } else {
+                    idfaString = ""
+                }
+                result(idfaString)
+            }            
         case "isLimitAdTrackingEnabled":
             result(ASIdentifierManager.shared().isAdvertisingTrackingEnabled)
         default:
