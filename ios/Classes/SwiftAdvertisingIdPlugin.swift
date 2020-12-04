@@ -15,17 +15,21 @@ public class SwiftAdvertisingIdPlugin: NSObject, FlutterPlugin {
         case "getAdvertisingId":
             let manager = ASIdentifierManager.shared()
             if #available(iOS 14.0, *) {
-                ATTrackingManager.requestTrackingAuthorization { status in
-                    var idfaString = ""
-                    switch status {
-                        case .authorized:
-                            idfaString = manager.advertisingIdentifier.uuidString
-                            break
-                        @unknown default:
-                            break
+                if (ATTrackingManager.trackingAuthorizationStatus == ATTrackingManager.AuthorizationStatus.authorized) {
+                    result(manager.advertisingIdentifier.uuidString)
+                } else {
+                    ATTrackingManager.requestTrackingAuthorization { status in
+                        var idfaString = ""
+                        switch status {
+                            case .authorized:
+                                idfaString = manager.advertisingIdentifier.uuidString
+                                break
+                            @unknown default:
+                                break
+                        }
+                        result(idfaString)
                     }
-                    result(idfaString) 
-                }
+                }                
             } else {
                 var idfaString: String!
                 if manager.isAdvertisingTrackingEnabled {
@@ -36,7 +40,11 @@ public class SwiftAdvertisingIdPlugin: NSObject, FlutterPlugin {
                 result(idfaString)
             }            
         case "isLimitAdTrackingEnabled":
-            result(ASIdentifierManager.shared().isAdvertisingTrackingEnabled)
+            if #available(iOS 14.0, *) {
+                result(ATTrackingManager.trackingAuthorizationStatus == ATTrackingManager.AuthorizationStatus.authorized)
+            } else {
+                result(ASIdentifierManager.shared().isAdvertisingTrackingEnabled)
+            }
         default:
             result(nil)
         }
