@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     bool isLimitAdTrackingEnabled;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      advertisingId = await AdvertisingId.id;
+      advertisingId = await AdvertisingId.id(true);
     } on PlatformException {
       advertisingId = 'Failed to get platform version.';
     }

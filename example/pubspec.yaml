@@ -16,6 +16,11 @@ dev_dependencies:
   advertising_id:
     path: ../
 
+environment:
+  sdk: '>=2.10.0 <3.0.0'
+
+version: 0.0.1+0.0.1
+
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 
