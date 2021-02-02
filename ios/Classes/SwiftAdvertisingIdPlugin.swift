@@ -17,19 +17,17 @@ public class SwiftAdvertisingIdPlugin: NSObject, FlutterPlugin {
             if #available(iOS 14.0, *) {
                 if (ATTrackingManager.trackingAuthorizationStatus == ATTrackingManager.AuthorizationStatus.authorized) {
                     result(manager.advertisingIdentifier.uuidString)
-                } else {
+                } else if (call.arguments as? Bool ?? false){
                     ATTrackingManager.requestTrackingAuthorization { status in
-                        var idfaString = ""
-                        switch status {
-                            case .authorized:
-                                idfaString = manager.advertisingIdentifier.uuidString
-                                break
-                            @unknown default:
-                                break
+                        if (status == ATTrackingManager.AuthorizationStatus.authorized) {
+                            result(manager.advertisingIdentifier.uuidString)
+                        } else {
+                            result("")
                         }
-                        result(idfaString)
                     }
-                }                
+                } else {
+                    result("")
+                }
             } else {
                 var idfaString: String!
                 if manager.isAdvertisingTrackingEnabled {
