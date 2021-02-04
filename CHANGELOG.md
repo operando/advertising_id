@@ -1,3 +1,7 @@
+## [1.1.0] 2021-02-04
+
+* Add iOS 14 support to get IDFA
+
 ## [1.0.0] 2020-06-07
 
 * Update versions
