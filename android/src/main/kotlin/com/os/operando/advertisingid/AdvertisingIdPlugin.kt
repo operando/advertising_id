@@ -31,8 +31,20 @@ class AdvertisingIdPlugin() : FlutterPlugin, ActivityAware, MethodCallHandler {
         channel.setMethodCallHandler(this)
     }
 
+    override fun onDetachedFromEngine(binding: FlutterPluginBinding) {
+    }
+
     override fun onAttachedToActivity(binding: ActivityPluginBinding) {
         activity = binding.activity
+    }
+
+    override fun onDetachedFromActivityForConfigChanges() {
+    }
+
+    override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
+    }
+
+    override fun onDetachedFromActivity() {
     }
 
     override fun onMethodCall(call: MethodCall, result: Result) {
