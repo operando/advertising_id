@@ -1,3 +1,9 @@
+## [2.0.0] 2021-04-21
+
+* [Supported the new Android plugins APIs](https://github.com/operando/advertising_id/pull/7)
+* [Support AndroidX](https://github.com/operando/advertising_id/pull/11)
+* [Support Null safety](https://github.com/operando/advertising_id/pull/12) 
+
 ## [1.1.0] 2021-02-04
 
 * Add iOS 14 support to get IDFA
