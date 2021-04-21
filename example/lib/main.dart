@@ -1,6 +1,6 @@
+import 'package:advertising_id/advertising_id.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:advertising_id/advertising_id.dart';
 
 void main() => runApp(new MyApp());
 
@@ -10,8 +10,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _advertisingId = '';
-  bool _isLimitAdTrackingEnabled;
+  String? _advertisingId = '';
+  bool? _isLimitAdTrackingEnabled;
 
   @override
   initState() {
@@ -21,8 +21,8 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   initPlatformState() async {
-    String advertisingId;
-    bool isLimitAdTrackingEnabled;
+    String? advertisingId;
+    bool? isLimitAdTrackingEnabled;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
       advertisingId = await AdvertisingId.id(true);
