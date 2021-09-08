@@ -14,7 +14,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar
 import kotlin.concurrent.thread
 
 class AdvertisingIdPlugin() : FlutterPlugin, ActivityAware, MethodCallHandler {
-    private lateinit var activity: Activity
+    public lateinit var activity: Activity
 
     companion object {
         @JvmStatic
@@ -48,6 +48,10 @@ class AdvertisingIdPlugin() : FlutterPlugin, ActivityAware, MethodCallHandler {
     }
 
     override fun onMethodCall(call: MethodCall, result: Result) {
+        if (!::activity.isInitialized) {
+            result.error("noActivity", "Activity not initialized", null)
+            return 
+        }
         when (call.method) {
             "getAdvertisingId" -> thread {
                 try {
