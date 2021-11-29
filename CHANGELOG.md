@@ -1,3 +1,16 @@
+## [2.1.1] 2021-11-05
+
+* [Fix isLimitAdTrackingEnabled ios #22](https://github.com/operando/advertising_id/pull/22)
+
+
+## [2.1.0] 2021-10-27
+
+* [Update Android dependency lib version](https://github.com/operando/advertising_id/pull/18)
+  * kotlin
+  * Android Gradle Plugin
+  * compileSdkVersion
+  * play-services-analytics
+
 ## [2.0.0] 2021-04-21
 
 * [Supported the new Android plugins APIs](https://github.com/operando/advertising_id/pull/7)
