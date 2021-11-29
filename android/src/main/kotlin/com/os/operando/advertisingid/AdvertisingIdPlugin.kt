@@ -14,7 +14,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar
 import kotlin.concurrent.thread
 
 class AdvertisingIdPlugin() : FlutterPlugin, ActivityAware, MethodCallHandler {
-    public lateinit var activity: Activity
+    private lateinit var activity: Activity
 
     companion object {
         @JvmStatic
