@@ -48,6 +48,10 @@ class AdvertisingIdPlugin() : FlutterPlugin, ActivityAware, MethodCallHandler {
     }
 
     override fun onMethodCall(call: MethodCall, result: Result) {
+        if (!::activity.isInitialized) {
+            result.error("noActivity", "Activity not initialized", null)
+            return 
+        }
         when (call.method) {
             "getAdvertisingId" -> thread {
                 try {
