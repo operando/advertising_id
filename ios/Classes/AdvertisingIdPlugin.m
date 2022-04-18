@@ -1,6 +1,6 @@
 #import "AdvertisingIdPlugin.h"
 
-#if __has_include(<app_settings/app_settings-Swift.h>)
+#if __has_include(<advertising_id/advertising_id-Swift.h>)
 #import <advertising_id/advertising_id-Swift.h>
 #else
 // Support project import fallback if the generated compatibility header
