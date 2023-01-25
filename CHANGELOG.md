@@ -1,3 +1,11 @@
+## [2.4.0] 2023-01-26
+
+* Update versions
+  * kotlin
+  * Android Gradle Plugin
+  * compileSdkVersion
+  * play-services-analytics
+
 ## [2.3.0] 2022-05-24
 
 * [Fix type mismatch](https://github.com/operando/advertising_id/pull/30)
