@@ -18,6 +18,11 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 android {
     compileSdkVersion 33
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -33,6 +38,7 @@ android {
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
+        proguardFiles '../../../android/proguard-rules.pro'
     }
 
     buildTypes {
@@ -42,6 +48,7 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    namespace 'com.os.operando.advertisingidexample'
 }
 
 flutter {
