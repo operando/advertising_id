@@ -1,3 +1,9 @@
+## [2.5.0] 2023-08-11
+
+* [AGP 8.X Support](https://github.com/operando/advertising_id/pull/37)
+* Update dart SDK constraint
+
+
 ## [2.4.0] 2023-01-26
 
 * Update versions
