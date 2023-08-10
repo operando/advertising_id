@@ -38,7 +38,6 @@ android {
         targetSdkVersion 33
         versionCode 1
         versionName "1.0"
-        proguardFiles '../../../android/proguard-rules.pro'
     }
 
     buildTypes {
