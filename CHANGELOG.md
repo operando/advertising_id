@@ -1,3 +1,8 @@
+## [2.6.0] 2023-12-05
+
+* Changed the library used from play-services-analytics to play-services-ads-identifier
+
+
 ## [2.5.0] 2023-08-11
 
 * [AGP 8.X Support](https://github.com/operando/advertising_id/pull/37)
