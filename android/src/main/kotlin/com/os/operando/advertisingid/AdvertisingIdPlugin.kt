@@ -1,6 +1,5 @@
 package com.os.operando.advertisingid
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Build
 import android.provider.Settings.Secure
