@@ -1,3 +1,16 @@
+## [2.7.0] 2024/08/26
+
+* [support Objective-C project with Podfile no use_frameworks](https://github.com/operando/advertising_id/pull/27)
+* [Remove references to deprecated v1 Android embedding](https://github.com/operando/advertising_id/pull/49)
+* [Delete buildTypes release](https://github.com/operando/advertising_id/pull/50)
+* [Add Privacy manifest file](https://github.com/operando/advertising_id/pull/51)
+* Update versions
+  * Android Gradle Plugin
+  * compileSdkVersion
+  * Gradle
+  * play-services-ads-identifier
+
+
 ## [2.6.0] 2023-12-05
 
 * Changed the library used from play-services-analytics to play-services-ads-identifier

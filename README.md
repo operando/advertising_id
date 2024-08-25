@@ -17,7 +17,7 @@ This will add a line like this to your package's pubspec.yaml
 ```yaml
 dependencies:
   ....
-  advertising_id: ^2.6.0
+  advertising_id: ^2.7.0
 ```
 
 ## Usage
