@@ -1,3 +1,7 @@
+## [2.7.1] 2024/09/06
+
+* Fix resource bundles
+
 ## [2.7.0] 2024/08/26
 
 * [support Objective-C project with Podfile no use_frameworks](https://github.com/operando/advertising_id/pull/27)
